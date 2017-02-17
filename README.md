@@ -1,6 +1,12 @@
 This git repository can be used as a starting point for the Tennis kata described below. The project contains one initial unit test. Google Test is used as test framework. 
 
-You should try to solve the kata incrementally by adding more and more unit tests to `test/TennisTest.cpp`. Try to keep each unit test small and focused. Make use of the [TDD cycle](https://en.wikipedia.org/wiki/Test-driven_development#Test-driven_development_cycle) `red - green - refactor`.
+You should solve the kata incrementally by adding more and more unit tests to `test/TennisTest.cpp`. Keep each unit test small and focused. Make use of the [TDD (Test Driven Development) cycle](https://en.wikipedia.org/wiki/Test-driven_development#Test-driven_development_cycle):
+
+1. Write a test
+1. Make sure it fails
+1. Make it pass
+1. Refactor
+1. Goto step 1
 
 ## Tennis kata
 
