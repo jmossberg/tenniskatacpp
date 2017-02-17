@@ -34,7 +34,7 @@ The project has been tested on a Linux Ubuntu system with the following installe
 1. Click Next
 1. Select Clone URI
 1. Paste `https://github.com/jmossberg/tenniskatacpp.git` into URI
-    ![](/assets/eclipse_001.png)
+    <img src="/assets/eclipse_001.png" alt="Drawing" style="width: 600px;"/>
 1. Click Next
 1. Select master branch
 1. Click Next
@@ -43,21 +43,21 @@ The project has been tested on a Linux Ubuntu system with the following installe
 1. Select Import existing projects
 1. Click Next
 1. Make sure the Tennis project is selected
-    ![](/assets/eclipse_002.png)
+    <img src="/assets/eclipse_002.png" alt="Drawing" style="width: 600px;"/>
 1. Click Finish
 1. The Tennis project should now be available in the Project Explorer
-    ![](/assets/eclipse_003.png)
+    <img src="/assets/eclipse_003.png" alt="Drawing" style="width: 600px;"/>
 
 
 ### How to build tests
 
 1. Right click on the Tennis project and select New - Folder
 1. Enter folder name `build` and click Finish
-    ![](/assets/eclipse_004.png)
+    <img src="/assets/eclipse_004.png" alt="Drawing" style="width: 600px;"/>
 1. Doubleclick on the `cmake` target in the Make Target tab on the right side of Eclipse
-    ![](/assets/eclipse_005.png)
+    <img src="/assets/eclipse_005.png" alt="Drawing" style="width: 600px;"/>
 1. You should get something similar as the following in the Console tab
-    ![](/assets/eclipse_006.png)
+    <img src="/assets/eclipse_006.png" alt="Drawing" style="width: 600px;"/>
 1. Doubleclick on the `tennistest` target in the Make Target tab on the right side of Eclipse
 1. The Console tab build output should end with:
 
@@ -72,7 +72,7 @@ The project has been tested on a Linux Ubuntu system with the following installe
 1. Make sure Project is set to Tennis in the Project field on the Main tab
 1. Enter `build/test/tennistest` in C/C++ Application field on the Main tab
 1. Select Disable auto build in the Main tab
-    ![](/assets/eclipse_007.png)
+    <img src="/assets/eclipse_007.png" alt="Drawing" style="width: 600px;"/>
 1. Click Apply and then Run
 1. You should get the following in the Console tab
 
@@ -86,7 +86,6 @@ The project has been tested on a Linux Ubuntu system with the following installe
         [----------] Global test environment tear-down
         [==========] 1 test from 1 test case ran. (11 ms total)
         [  PASSED  ] 1 test.
-
 
 ## Tennis kata
 
