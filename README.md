@@ -1,6 +1,6 @@
-== How to build tests
+## How to build tests
 
-=== Prerequisites
+### Prerequisites
 
 The project has been tested on a Linux Ubuntu system with the following installed:
 
@@ -9,18 +9,18 @@ The project has been tested on a Linux Ubuntu system with the following installe
 * gdb (optional for debugging)  
 * cmake >= version 3.5 
 
-=== Build commands
+### Build commands
 
     cd build
     cmake ..
     make
 
-== How to run tests
+## How to run tests
 
     cd build
     test/tennistest
 
-== Tennis kata
+## Tennis kata
 
 Credit: This kata can be found at http://codingdojo.org/kata/Tennis/ and also in the [The Coding Dojo Handbook](https://leanpub.com/codingdojohandbook) written by Emily Bache.
 
