@@ -1,0 +1,5 @@
+project("Tennis" CXX)
+cmake_minimum_required(VERSION 3.5)
+add_subdirectory(google)
+add_subdirectory(test)
+add_subdirectory(src)
