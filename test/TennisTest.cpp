@@ -105,32 +105,6 @@ TEST_F(TennisTest, GetLeader)
 	ASSERT_EQ(leader, "Player 1");
 }
 
-TEST_F(TennisTest, GetLooser)
-{
-	//Execute
-	t1.winBall("Player 1");
-	auto looser = t1.looser();
-
-	//Verify
-	ASSERT_EQ(looser, "Player 2");
-}
-
-TEST_F(TennisTest, GetLooserPoints)
-{
-	//Execute
-	t1.winBall("Player 1");
-	t1.winBall("Player 1");
-	t1.winBall("Player 2");
-	t2.winBall("Player 2");
-	t2.winBall("Player 2");
-	auto t1looser = t1.looserPoints();
-	auto t2looser = t2.looserPoints();
-
-	//Verify
-	ASSERT_EQ(t1looser, 1);
-	ASSERT_EQ(t2looser, 0);
-}
-
 TEST_F(TennisTest, ConvertPointsToScore)
 {
 	ASSERT_EQ(t1.pointsAsScore(0), 0);
@@ -201,4 +175,29 @@ TEST_F(TennisTest, Player2Wins_2)
 
 	//Verify
 	ASSERT_EQ(score, "Player 2 wins");
+}
+
+TEST_F(TennisTest, Player1WinsAfterDeuce)
+{
+	//Execute
+	t1.winBall("Player 2");
+	ASSERT_EQ(t1.score(), "Player 1: 0 Player 2: 15");
+	t1.winBall("Player 1");
+	ASSERT_EQ(t1.score(), "Player 1: 15 Player 2: 15");
+	t1.winBall("Player 2");
+	ASSERT_EQ(t1.score(), "Player 1: 15 Player 2: 30");
+	t1.winBall("Player 1");
+	ASSERT_EQ(t1.score(), "Player 1: 30 Player 2: 30");
+	t1.winBall("Player 2");
+	ASSERT_EQ(t1.score(), "Player 1: 30 Player 2: 40");
+	t1.winBall("Player 1");
+	ASSERT_EQ(t1.score(), "Deuce");
+	t1.winBall("Player 2");
+	ASSERT_EQ(t1.score(), "Player 2 advantage");
+	t1.winBall("Player 1");
+	ASSERT_EQ(t1.score(), "Deuce");
+	t1.winBall("Player 2");
+	ASSERT_EQ(t1.score(), "Player 2 advantage");
+	t1.winBall("Player 2");
+	ASSERT_EQ(t1.score(), "Player 2 wins");
 }
