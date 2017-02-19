@@ -15,15 +15,15 @@ Credit: This kata can be found at http://codingdojo.org/kata/Tennis/ and also in
 1. Write a Tennis class to keep track of the Tennis score in one [game](https://en.wikipedia.org/wiki/Tennis_scoring_system#Game_score). You don't have to consider [sets](https://en.wikipedia.org/wiki/Tennis_scoring_system#Set_score) and [matches](https://en.wikipedia.org/wiki/Tennis_scoring_system#Match_score).
 1. The Tennis scoring system is described at http://codingdojo.org/kata/Tennis/
 1. The Tennis class shall implement a method `winBall("<player>")` to report which player wins a ball, `winBall("Player 1")` is called if Player 1 wins the ball for example.
-1. The Tennis class shall implement a method, `score()` that returns the current score as a string. The `score()` function would return `Player 1: 15 Player 2: 0` if Player 1 has won the first ball in the game for example. 
+1. The Tennis class shall implement a method, `score()` that returns the current score as a string. The `score()` function would return `Player 1: 15 Player 2: love` if Player 1 has won the first ball in the game for example. 
 1. The `score()` method shall return whether anyone has **won** the set, e.g. `Player 1 wins`.
 1. The `score()` method shall return whether anyone has the **advantage**, e.g. `Player 2 advantage`.
 1. The `score()` method shall return whether the game is in **deuce**, e.g. `Deuce`.  
 1. Below is one scenario showing what `score()` returns in a game where Player 2 finally wins after the game being in deuce.
-   * The game begins -> `"Player 1: 0 Player 2: 0"`
-   * Player 1 wins the ball -> `"Player 1: 15 Player 2: 0"`
-   * Player 1 wins the ball -> `"Player 1: 30 Player 2: 0"`
-   * Player 1 wins the ball -> `"Player 1: 40 Player 2: 0"`
+   * The game begins -> `"Player 1: love Player 2: love"`
+   * Player 1 wins the ball -> `"Player 1: 15 Player 2: love"`
+   * Player 1 wins the ball -> `"Player 1: 30 Player 2: love"`
+   * Player 1 wins the ball -> `"Player 1: 40 Player 2: love"`
    * Player 2 wins the ball -> `"Player 1: 40 Player 2: 15"`
    * Player 2 wins the ball -> `"Player 1: 40 Player 2: 30"`
    * Player 2 wins the ball -> `"Deuce"`
