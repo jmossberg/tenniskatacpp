@@ -3,5 +3,5 @@
 class Tennis
 {
 public:
-	std::string score();
+    std::string score();
 };

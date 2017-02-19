@@ -2,5 +2,5 @@
 
 std::string Tennis::score()
 {
-	return "Player 1: love Player 2: love";
+    return "Player 1: love Player 2: love";
 }

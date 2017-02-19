@@ -6,11 +6,11 @@ TEST(TennisTest, ScoresAreZeroAtStart)
     //Setup
     Tennis t1;
 
-	//Execute
-	std::string score = t1.score();
+    //Execute
+    std::string score = t1.score();
 
-	//Verify
+    //Verify
     //Zero points are called "love" in a Tennis game
-	ASSERT_EQ(score, "Player 1: love Player 2: love");
+    ASSERT_EQ(score, "Player 1: love Player 2: love");
 }
 
