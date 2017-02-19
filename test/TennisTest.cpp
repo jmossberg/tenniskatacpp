@@ -4,8 +4,8 @@
 class TennisTest : public ::testing::Test
 {
 public:
-	Tennis t1;
-	Tennis t2;
+	Tennis t1{"Player 1", "Player 2"};
+	Tennis t2{"Player 1", "Player 2"};
 };
 
 TEST_F(TennisTest, ScoresAreZeroAtStart)
@@ -14,7 +14,7 @@ TEST_F(TennisTest, ScoresAreZeroAtStart)
 	std::string score = t1.score();
 
 	//Verify
-	ASSERT_EQ(score, "Player 1: 0 Player 2: 0");
+	ASSERT_EQ(score, "Player 1: love Player 2: love");
 }
 
 TEST_F(TennisTest, AbsoluteScoreDiffIsOne)
@@ -105,17 +105,17 @@ TEST_F(TennisTest, GetLeader)
 	ASSERT_EQ(leader, "Player 1");
 }
 
-TEST_F(TennisTest, ConvertPointsToScore)
+TEST_F(TennisTest, PointsToCorrespondingCall)
 {
-	ASSERT_EQ(t1.pointsAsScore(0), 0);
-	ASSERT_EQ(t1.pointsAsScore(1), 15);
-	ASSERT_EQ(t1.pointsAsScore(2), 30);
-	ASSERT_EQ(t1.pointsAsScore(3), 40);
-	ASSERT_EQ(t1.pointsAsScore(4), 40);
-	ASSERT_EQ(t1.pointsAsScore(5), 40);
+	ASSERT_EQ(t1.call(0), "love");
+	ASSERT_EQ(t1.call(1), "15");
+	ASSERT_EQ(t1.call(2), "30");
+	ASSERT_EQ(t1.call(3), "40");
+	ASSERT_EQ(t1.call(4), "40");
+	ASSERT_EQ(t1.call(5), "40");
 }
 
-TEST_F(TennisTest, Player2WinsThreeFirstBalls_2)
+TEST_F(TennisTest, Player2WinsThreeFirstBalls)
 {
 	//Execute
 	t1.winBall("Player 2");
@@ -124,10 +124,10 @@ TEST_F(TennisTest, Player2WinsThreeFirstBalls_2)
 	std::string score = t1.score();
 
 	//Verify
-	ASSERT_EQ(score, "Player 1: 0 Player 2: 40");
+	ASSERT_EQ(score, "Player 1: love Player 2: 40");
 }
 
-TEST_F(TennisTest, Deuce_2)
+TEST_F(TennisTest, Deuce)
 {
 	//Execute
 	t1.winBall("Player 2");
@@ -142,7 +142,7 @@ TEST_F(TennisTest, Deuce_2)
 	ASSERT_EQ(score, "Deuce");
 }
 
-TEST_F(TennisTest, Player1Advantage_2)
+TEST_F(TennisTest, Player1Advantage)
 {
 	//Execute
 	t1.winBall("Player 2");
@@ -158,7 +158,7 @@ TEST_F(TennisTest, Player1Advantage_2)
 	ASSERT_EQ(score, "Player 1 advantage");
 }
 
-TEST_F(TennisTest, Player2Wins_2)
+TEST_F(TennisTest, Player2Wins)
 {
 	//Execute
 	t1.winBall("Player 2");
@@ -177,11 +177,11 @@ TEST_F(TennisTest, Player2Wins_2)
 	ASSERT_EQ(score, "Player 2 wins");
 }
 
-TEST_F(TennisTest, Player1WinsAfterDeuce)
+TEST_F(TennisTest, Player2WinsAfterDeuce)
 {
 	//Execute
 	t1.winBall("Player 2");
-	ASSERT_EQ(t1.score(), "Player 1: 0 Player 2: 15");
+	ASSERT_EQ(t1.score(), "Player 1: love Player 2: 15");
 	t1.winBall("Player 1");
 	ASSERT_EQ(t1.score(), "Player 1: 15 Player 2: 15");
 	t1.winBall("Player 2");

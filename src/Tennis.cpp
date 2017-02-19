@@ -1,10 +1,10 @@
 #include "Tennis.hpp"
 
 void Tennis::winBall(std::string player) {
-	if("Player 1" == player) {
+	if(player1 == player) {
 		p1 += 1;
 	}
-	if("Player 2" == player) {
+	if(player2 == player) {
 		p2 += 1;
 	}
 }
@@ -62,12 +62,12 @@ std::string Tennis::leader()
 	return leader;
 }
 
-int Tennis::pointsAsScore(int points)
+std::string Tennis::call(int points)
 {
-	if(0 == points) { return 0; }
-	if(1 == points) { return 15; }
-	if(2 == points) { return 30; }
-	return 40;
+	if(0 == points) { return "love"; }
+	if(1 == points) { return "15"; }
+	if(2 == points) { return "30"; }
+	return "40";
 }
 
 std::string Tennis::score()
@@ -75,7 +75,7 @@ std::string Tennis::score()
 	std::string score{""};
 
 	if(NORMAL == state()) {
-		score = "Player 1: " + std::to_string(pointsAsScore(p1)) + " Player 2: " + std::to_string(pointsAsScore(p2));
+		score = player1 + ": " + call(p1) + " " + player2 + ": " + call(p2);
 	}
 
 	if(DEUCE == state()) {
@@ -93,6 +93,6 @@ std::string Tennis::score()
 	return score;
 }
 
-Tennis::Tennis() : p1{0}, p2{0}
+Tennis::Tennis(std::string newplayer1, std::string newplayer2) : player1{newplayer1}, player2{newplayer2}, p1{0}, p2{0}
 {
 }
