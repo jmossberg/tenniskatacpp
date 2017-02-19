@@ -12,27 +12,28 @@ You should solve the kata incrementally by adding more and more unit tests to `t
 
 Credit: This kata can be found at http://codingdojo.org/kata/Tennis/ and also in the [The Coding Dojo Handbook](https://leanpub.com/codingdojohandbook) written by Emily Bache.
 
-1. The Tennis scoring system is described at http://codingdojo.org/kata/Tennis/ 
-1. Write a Tennis class to keep track of the Tennis score in one set. You don't have to consider multiple sets.
-1. The Tennis class should implement a function, `getScore()` that returns the current score as a string. The `getScore()` function would return `Player 1: 15 Player 2: 0` if Player 1 has won the first ball in the set for example. 
-1. The `getScore()` function shall return whether anyone has won the set, e.g. `Player 1 wins`.
-1. The `getScore()` function shall return if the if any player has the "advantage", e.g. `Player 1: 40 Player 2: 40 (advantage)`. 
-1. The Tennis class should implement a function `winBall("<player>")` to report which player wins a ball, `winBall("Player 1")` is called if Player 1 wins the ball for example. 
-1. Below is one scenario showing what `getScore()` returns in a set where Player 2 finally wins after the set being in deuce.
-   * The set begins -> `"Player 1: 0 Player 2: 0"`
+1. Write a Tennis class to keep track of the Tennis score in one [game](https://en.wikipedia.org/wiki/Tennis_scoring_system#Game_score). You don't have to consider [sets](https://en.wikipedia.org/wiki/Tennis_scoring_system#Set_score) and [matches](https://en.wikipedia.org/wiki/Tennis_scoring_system#Match_score).
+1. The Tennis scoring system is described at http://codingdojo.org/kata/Tennis/
+1. The Tennis class shall implement a method `winBall("<player>")` to report which player wins a ball, `winBall("Player 1")` is called if Player 1 wins the ball for example.
+1. The Tennis class shall implement a method, `score()` that returns the current score as a string. The `score()` function would return `Player 1: 15 Player 2: 0` if Player 1 has won the first ball in the game for example. 
+1. The `score()` method shall return whether anyone has **won** the set, e.g. `Player 1 wins`.
+1. The `score()` method shall return whether anyone has the **advantage**, e.g. `Player 2 advantage`.
+1. The `score()` method shall return whether the game is in **deuce**, e.g. `Deuce`.  
+1. Below is one scenario showing what `score()` returns in a game where Player 2 finally wins after the game being in deuce.
+   * The game begins -> `"Player 1: 0 Player 2: 0"`
    * Player 1 wins the ball -> `"Player 1: 15 Player 2: 0"`
    * Player 1 wins the ball -> `"Player 1: 30 Player 2: 0"`
    * Player 1 wins the ball -> `"Player 1: 40 Player 2: 0"`
    * Player 2 wins the ball -> `"Player 1: 40 Player 2: 15"`
    * Player 2 wins the ball -> `"Player 1: 40 Player 2: 30"`
-   * Player 2 wins the ball -> `"Player 1: 40 Player 2: 40"`
-   * Player 2 wins the ball -> `"Player 1: 40 Player 2: 40 (advantage)"`
+   * Player 2 wins the ball -> `"Deuce"`
+   * Player 2 wins the ball -> `"Player 2 advantage"`
    * Player 2 wins the ball -> `"Player 2 wins"`
 
 ## File structure
 
 * The unit tests are located in `test/TennisTest.cpp`
-* The Tennis class is defined in `src/Tennis.hpp` and `src/Tennis.cpp`
+* The Tennis class is declared in `src/Tennis.hpp` and defined `src/Tennis.cpp`
 * The Google Test framework is located in the `google` folder
 * The `assets` folder contains the pictures used in this readme file
 
@@ -42,14 +43,15 @@ The project has been tested on a Linux Ubuntu system with the following installe
 
 * g++   >= version 5   
 * gcc   >= version 5   
-* gdb (optional for debugging)  
 * cmake >= version 3.5 
 * Eclipse CDT 4.4.2
+* gdb (optional for debugging)
 
 ## Command line
 
 ### How to build tests
 
+	mkdir build
     cd build
     cmake ..
     make
@@ -120,4 +122,3 @@ The project has been tested on a Linux Ubuntu system with the following installe
         [----------] Global test environment tear-down
         [==========] 1 test from 1 test case ran. (11 ms total)
         [  PASSED  ] 1 test.
-
