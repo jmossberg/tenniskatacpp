@@ -72,7 +72,7 @@ The project has been tested on a Linux Ubuntu system with the following installe
 1. Paste `https://github.com/jmossberg/tenniskatacpp.git` into URI
     <img src="/assets/eclipse_001.png" width="600">
 1. Click Next
-1. Select master branch
+1. Select master branch           
     <img src="/assets/eclipse_001b.png" width="600">
 1. Click Next
 1. Enter Directory, e.g. `/home/tdd/github/tenniskatacpp`.
